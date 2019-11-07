@@ -3,9 +3,15 @@ package com.example.a20191107_01_numberbaseballgame
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.a20191107_01_numberbaseballgame.adapters.ChatAdapter
+import com.example.a20191107_01_numberbaseballgame.datas.ChatData
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 class MainActivity : BaseActivity() {
+
+    var chatList = ArrayList<ChatData>()
+    var chatAdapter:ChatAdapter? = null
 
     var questionNumArray = ArrayList<Int>()
 
@@ -39,6 +45,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
+        chatAdapter = ChatAdapter(this,chatList)
+        chatListView.adapter = chatAdapter
     }
 
 }
