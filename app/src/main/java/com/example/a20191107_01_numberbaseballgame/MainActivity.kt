@@ -63,7 +63,14 @@ class MainActivity : BaseActivity() {
 
             }
         }
+        chatList.add(ChatData("${strikeCount}S ${ballCount}B 입니다.","CPU"))
 
+        if(strikeCount == 3){
+            chatList.add(ChatData("축하합니다! 정답입니다.","CPU"))
+        }
+
+        chatAdapter?.notifyDataSetChanged()
+        chatListView.smoothScrollToPosition(chatList.size-1)
 
 
     }
@@ -74,7 +81,7 @@ class MainActivity : BaseActivity() {
             chatList.add(ChatData(inputNum,"ME"))
 
             chatAdapter?.notifyDataSetChanged()
-
+            inputEdt.setText("")
             userInputNumArray.clear()
             userInputNumArray.add( inputNum.toInt()/100) // 맨 앞 숫자 추출
             userInputNumArray.add( inputNum.toInt()/10 % 10) // 가운데 숫자 추출
