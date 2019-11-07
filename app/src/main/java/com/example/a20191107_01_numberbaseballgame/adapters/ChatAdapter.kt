@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.example.a20191107_01_numberbaseballgame.R
 import com.example.a20191107_01_numberbaseballgame.datas.ChatData
 
@@ -26,7 +27,11 @@ class ChatAdapter(context: Context,res:Int,list:ArrayList<ChatData>) :ArrayAdapt
 
         var row = tempRow!!
 
+        var data = mList.get(position)
 
+        var contentTxt = row.findViewById<TextView>(R.id.contentTxt)
+
+        contentTxt.text = data.message
 
         return tempRow
     }
