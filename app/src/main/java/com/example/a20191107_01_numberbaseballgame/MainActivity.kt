@@ -43,11 +43,29 @@ class MainActivity : BaseActivity() {
     }
 
     fun checkAnswer(){
-        /*for(i in 0..2){
+
+        var strikeCount = 0
+        var ballCount =0
+
+        for(i in 0..2){
             for(j in 0..2){
 
+                if( userInputNumArray.get(i) == questionNumArray.get(j)){
+                    if(i==j)
+                    {
+                        //strike 갯수 증가
+                        strikeCount ++
+                    }else{
+                        //ball 갯수 증가
+                        ballCount++
+                    }
+                }
+
             }
-        }*/
+        }
+
+
+
     }
 
     override fun setupEvents() {
